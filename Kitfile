@@ -1,0 +1,23 @@
+manifestVersion: v1.0.0
+package:
+  name: TensorFlow Tabular Example
+  description: 'Train a model using TensorFlow Tabular '
+  license: Apache-2.0
+  authors: [Jozu]
+model:
+  name: onnx Model
+  path: ./models/dl_model_v1
+  framework: tensorflow
+  version: 1.0.0
+  description: Example model using tensorflow
+  license: Apache-2.0
+code:
+  - path: ./notebooks
+    description: Model training code
+datasets:
+  - name: training data
+    path: ./data/train.csv
+    description: Tabular training data
+  - name: training data
+    path: ./data/test.csv
+    description: Tabular training data
