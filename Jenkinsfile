@@ -15,9 +15,9 @@ pipeline {
         sh 'kit version'
       }
     }
-    stage('remove any local models that exist') {
+    stage('Remove all locally stored modelkits') {
       steps {
-        sh 'kit remove $REGISTRY_SERVER/$REGISTRY_ORG/$MODEL_NAME:$MODEL_TAG'
+        sh 'kit remove --all --force'
       }
     }
     stage('verify the model is removed') {
@@ -48,7 +48,7 @@ pipeline {
   }
   post {
     always {
-      sh 'kit logout'
+      sh 'kit logout docker.io'
     }
   }
 }
