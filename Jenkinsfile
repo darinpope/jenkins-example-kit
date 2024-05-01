@@ -1,5 +1,7 @@
 pipeline {
-  agent any
+  agent { 
+    label 'kit'
+  }
   environment {
     DH_CREDS=credentials('dh-creds')
     REGISTRY_SERVER='docker.io'
